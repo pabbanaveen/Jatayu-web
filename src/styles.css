@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url(https://unpkg.com/browse/bootstrap@4.1.0/dist/css/bootstrap.min.css); */
+/* "styles": [
+    "src/styles.css","node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+] */@import "../node_modules/bootstrap/dist/css/bootstrap.css"
+

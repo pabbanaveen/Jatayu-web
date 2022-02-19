@@ -1,0 +1,20 @@
+
+<div>you can manage your todos here</div>
+<div class="container">
+    <a routerLink="/todos">here</a>
+</div>
+<div class="container">
+
+    click here ti get the c=customized welcome message
+    <button (click)="getWelcomMessageWirhParam()" class="btn btn-success">Get Welcome Message</button>
+</div>
+
+<div class="container">
+
+   <h2>Your ustomized message</h2> 
+   <div>{{message}}</div>
+   
+</div>
+<div class="container"> {{welcomErrorMessage}}
+ </div>
+
