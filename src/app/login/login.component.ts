@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicAuthenticationService } from '../service/basic-authentication.service';
-import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 export const AUTHENTICATED_USER="authenticatedUser";
 @Component({
@@ -11,7 +10,7 @@ export const AUTHENTICATED_USER="authenticatedUser";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private hardcodeAuthentication: HardcodedAuthenticationService,
+  constructor(private router: Router, 
     private basicAuthService: BasicAuthenticationService) { 
   }
 
@@ -22,22 +21,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  handelLogin(){
-    if(this.hardcodeAuthentication.authenticate(this.username, this.password)) {
-      this.router.navigate(['welcome', this.username]);
-      this.invalidLogin = false;
-    } else {
-      this.invalidLogin = true;
-    }
-  }
 
-  handelBasicAuthLogin(){
-    // this.invalidLogin = this.hardcodeAuthentication.authenticate(this.username, this.password);
-    // this.basicAuthService.executeBasicAuthentication(this.username, this.password).subscribe(
+  handelAuthLogin(){
       this.basicAuthService.executeJWTAuthentication(this.username, this.password).subscribe(
-
       data => {
-        console.log(data);
         this.router.navigate(['welcome', this.username]);
         this.invalidLogin = false;
       },
